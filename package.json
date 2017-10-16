@@ -1,0 +1,27 @@
+{
+  "name": "xo-summary",
+  "version": "1.0.0",
+  "description": "Display output from XO as a list of style errors, ordered by count",
+  "bin": "index.js",
+  "preferGlobal": true,
+  "scripts": {
+    "test": "xo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LitoMore/xo-summary.git"
+  },
+  "author": "LitoMore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LitoMore/xo-summary/issues"
+  },
+  "homepage": "https://github.com/LitoMore/xo-summary#readme",
+  "devDependencies": {
+    "xo": "^0.18.2"
+  },
+  "dependencies": {
+    "concat-stream": "^1.6.0",
+    "pad": "^2.0.1"
+  }
+}
