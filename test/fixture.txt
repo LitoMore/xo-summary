@@ -1,0 +1,31 @@
+  test.js:1:13
+  ✖   1:13   Missing semicolon.                                                      semi
+  ✖   3:28   Missing semicolon.                                                      semi
+  ✖   4:31   Missing semicolon.                                                      semi
+  ✖  11:16   Missing semicolon.                                                      semi
+  ✖  13:106  Missing semicolon.                                                      semi
+  ✖  16:3    Expected indentation of 1 tab but found 2 spaces.                       indent
+  ✖  16:92   Missing semicolon.                                                      semi
+  ✖  17:3    Expected indentation of 1 tab but found 2 spaces.                       indent
+  ✖  17:19   Missing semicolon.                                                      semi
+  ✖  18:3    Missing semicolon.                                                      semi
+  ✖  21:3    Expected indentation of 1 tab but found 2 spaces.                       indent
+  ✖  21:94   Missing semicolon.                                                      semi
+  ✖  22:3    Expected an assignment or function call and instead saw an expression.  no-unused-expressions
+  ✖  22:3    Expected indentation of 1 tab but found 2 spaces.                       indent
+  ✖  22:65   Missing semicolon.                                                      semi
+  ✖  23:3    Missing semicolon.                                                      semi
+  ✖  26:3    Expected indentation of 1 tab but found 2 spaces.                       indent
+  ✖  26:78   Missing semicolon.                                                      semi
+  ✖  27:3    Expected an assignment or function call and instead saw an expression.  no-unused-expressions
+  ✖  27:3    Expected indentation of 1 tab but found 2 spaces.                       indent
+  ✖  27:65   Missing semicolon.                                                      semi
+  ✖  28:3    Missing semicolon.                                                      semi
+  ✖  31:3    Expected indentation of 1 tab but found 2 spaces.                       indent
+  ✖  31:61   Missing semicolon.                                                      semi
+  ✖  32:3    Expected an assignment or function call and instead saw an expression.  no-unused-expressions
+  ✖  32:3    Expected indentation of 1 tab but found 2 spaces.                       indent
+  ✖  32:65   Missing semicolon.                                                      semi
+  ✖  33:3    Missing semicolon.                                                      semi
+
+  28 errors
