@@ -36,7 +36,7 @@ $ xo | xo-summary
 
 ## Related
 
-- [xo](https://github.com/sindresorhus/xo) - JavaScript happiness style linter
+- [XO](https://github.com/sindresorhus/xo) - JavaScript happiness style linter
 
 ## License
 
