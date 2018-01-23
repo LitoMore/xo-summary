@@ -7,7 +7,7 @@
 
 Display output from `xo` as a list of style errors, ordered by count.
 
-*This pakcage is inspired from [standard-summary](https://github.com/zeke/standard-summary).*
+*This package is inspired from [standard-summary](https://github.com/zeke/standard-summary).*
 
 ## Install
 
