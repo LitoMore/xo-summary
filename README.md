@@ -3,7 +3,7 @@
 [![](https://img.shields.io/travis/LitoMore/xo-summary/master.svg)](https://travis-ci.org/LitoMore/xo-summary)
 [![](https://img.shields.io/npm/v/xo-summary.svg)](https://www.npmjs.com/package/xo-summary)
 [![](https://img.shields.io/npm/l/xo-summary.svg)](https://github.com/LitoMore/xo-summary/blob/master/LICENSE)
-[![](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+[![](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 
 Display output from `xo` as a list of style errors, ordered by count.
 
@@ -36,7 +36,7 @@ $ xo | xo-summary
 
 ## Related
 
-- [XO](https://github.com/sindresorhus/xo) - JavaScript happiness style linter
+- [XO](https://github.com/xojs/xo) - JavaScript happiness style linter
 
 ## License
 
