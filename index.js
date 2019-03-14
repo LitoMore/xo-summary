@@ -20,6 +20,7 @@ process.stdin.pipe(concat(buffer => {
 			if (!line || !line.match(/\s+\d+:\d+\s+/)) {
 				return;
 			}
+
 			const error = line.split(/\s+\d+:\d+\s+/)[1].replace(/\s+\S+$/, '');
 			const count = errors[error] || 0;
 			errors[error] = count + 1;
