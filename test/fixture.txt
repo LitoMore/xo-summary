@@ -28,4 +28,20 @@
   ✖  32:65   Missing semicolon.                                                      semi
   ✖  33:3    Missing semicolon.                                                      semi
 
-  28 errors
+  src/pages/login/index.js:10:2
+  ✖  10:2   Expected blank line between class members.             lines-between-class-members
+  ✖  13:2   Expected blank line between class members.             lines-between-class-members
+  ✖  20:2   Expected blank line between class members.             lines-between-class-members
+  ✖  31:3   Expected blank line before this statement.             padding-line-between-statements
+  ✖  33:2   Expected blank line between class members.             lines-between-class-members
+  ✖  41:7   Callbacks must be listed after all other props         react/jsx-sort-props
+
+  src/app.js:5:19
+  ✖   5:19  Unable to resolve path to module pages/login.          import/no-unresolved
+  ✖   6:22  Unable to resolve path to module pages/messages.       import/no-unresolved
+  ✖   7:22  Unable to resolve path to module pages/settings.       import/no-unresolved
+
+  src/pages/settings/index.js:61:53
+  ✖  61:53  Shorthand props must be listed before all other props  react/jsx-sort-props
+
+  38 errors

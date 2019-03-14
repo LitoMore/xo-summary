@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "concat-stream": "^1.6.0",
-    "pad": "^2.0.1"
+    "pad": "^2.0.1",
+    "strip-ansi": "^5.1.0"
   }
 }

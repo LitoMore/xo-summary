@@ -2,6 +2,7 @@
 
 const concat = require('concat-stream');
 const pad = require('pad');
+const stripAnsi = require('strip-ansi');
 
 const errors = {};
 
@@ -15,6 +16,7 @@ process.stdin.pipe(concat(buffer => {
 		.toString()
 		.split('\n')
 		.forEach(line => {
+			line = stripAnsi(line);
 			if (!line || !line.match(/\s+\d+:\d+\s+/)) {
 				return;
 			}
