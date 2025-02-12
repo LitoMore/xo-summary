@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-const concat = require('concat-stream');
-const pad = require('pad');
-const stripAnsi = require('strip-ansi');
+import process from 'node:process';
+import concat from 'concat-stream';
+import pad from 'pad';
+import stripAnsi from 'strip-ansi';
 
 const errors = {};
 
@@ -12,24 +13,22 @@ if (process.stdin.isTTY) {
 }
 
 process.stdin.pipe(concat(buffer => {
-	buffer
+	for (let line of buffer
 		.toString()
-		.split('\n')
-		.forEach(line => {
-			line = stripAnsi(line);
-			if (!line || !line.match(/\s+\d+:\d+\s+/)) {
-				return;
-			}
+		.split('\n')) {
+		line = stripAnsi(line);
+		if (!line || !/\s+\d+:\d+\s+/.test(line)) {
+			continue;
+		}
 
-			const error = line.split(/\s+\d+:\d+\s+/)[1].replace(/\s+\S+$/, '');
-			const count = errors[error] || 0;
-			errors[error] = count + 1;
-		});
+		const error = line.split(/\s+\d+:\d+\s+/)[1].replace(/\s+\S+$/, '');
+		const count = errors[error] || 0;
+		errors[error] = count + 1;
+	}
 
-	Object.keys(errors)
-		.sort((a, b) => errors[b] - errors[a])
-		.forEach(error => {
-			const count = errors[error];
-			console.log(pad(String(count), 6), error);
-		});
+	for (const error of Object.keys(errors)
+		.sort((a, b) => errors[b] - errors[a])) {
+		const count = errors[error];
+		console.log(pad(String(count), 6), error);
+	}
 }));
