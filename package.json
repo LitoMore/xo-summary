@@ -8,6 +8,9 @@
   "engines": {
     "node": ">=18"
   },
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "xo && cat test/fixture.txt | node index.js"
   },
