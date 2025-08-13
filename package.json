@@ -12,7 +12,9 @@
     "index.js"
   ],
   "scripts": {
-    "test": "xo && cat test/fixture.txt | node index.js"
+    "test": "xo && npm run test:default && npm run test:name-only",
+    "test:default": "cat test/fixture.txt | node index.js",
+    "test:name-only": "cat test/fixture.txt | node index.js --name-only"
   },
   "repository": {
     "type": "git",

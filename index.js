@@ -12,6 +12,8 @@ if (process.stdin.isTTY) {
 	process.exit(1);
 }
 
+const isNameOnlyMode = process.argv.includes('--name-only');
+
 process.stdin.pipe(concat(buffer => {
 	for (let line of buffer
 		.toString()
@@ -21,7 +23,7 @@ process.stdin.pipe(concat(buffer => {
 			continue;
 		}
 
-		const error = line.split(/\s+\d+:\d+\s+/)[1].replace(/\s+\S+$/, '');
+		const error = line.split(/\s+\d+:\d+\s+/)[1].replace(isNameOnlyMode ? /^.+\s{2,}/ : /\s+\S+$/, '');
 		const count = errors[error] || 0;
 		errors[error] = count + 1;
 	}
