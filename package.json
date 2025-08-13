@@ -28,7 +28,6 @@
   "homepage": "https://github.com/LitoMore/xo-summary#readme",
   "dependencies": {
     "concat-stream": "^2.0.0",
-    "pad": "^3.3.0",
     "strip-ansi": "^7.1.0"
   },
   "devDependencies": {

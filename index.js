@@ -2,7 +2,6 @@
 
 import process from 'node:process';
 import concat from 'concat-stream';
-import pad from 'pad';
 import stripAnsi from 'strip-ansi';
 
 const errors = {};
@@ -31,6 +30,6 @@ process.stdin.pipe(concat(buffer => {
 	for (const error of Object.keys(errors)
 		.sort((a, b) => errors[b] - errors[a])) {
 		const count = errors[error];
-		console.log(pad(String(count), 6), error);
+		console.log(String(count).padEnd(6, ' '), error);
 	}
 }));
