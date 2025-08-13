@@ -1,7 +1,7 @@
 # xo-summary
 
 [![](https://img.shields.io/npm/v/xo-summary.svg)](https://www.npmjs.com/package/xo-summary)
-[![](https://img.shields.io/npm/l/xo-summary.svg)](https://github.com/LitoMore/xo-summary/blob/master/LICENSE)
+[![](https://img.shields.io/npm/l/xo-summary.svg)](https://github.com/LitoMore/xo-summary/blob/main/LICENSE)
 [![](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 
 Display output from `xo` as a list of style errors, ordered by count.
