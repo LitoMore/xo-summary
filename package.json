@@ -30,6 +30,6 @@
     "strip-ansi": "^7.1.0"
   },
   "devDependencies": {
-    "xo": "^0.60.0"
+    "xo": "^1.2.1"
   }
 }
