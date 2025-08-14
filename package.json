@@ -1,6 +1,6 @@
 {
   "name": "xo-summary",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Display output from XO as a list of style errors, ordered by count",
   "type": "module",
   "bin": "index.js",
