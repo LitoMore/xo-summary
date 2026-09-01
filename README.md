@@ -49,6 +49,10 @@ xo | xo-summary --name-only
 1      padding-line-between-statements
 ```
 
+### More summary formats?
+
+This package may not be necessary. You can use `xo --reporter json` to generate JSON output and summarize it with your preferred tool.
+
 ## Related
 
 - [XO](https://github.com/xojs/xo) - JavaScript/TypeScript linter (ESLint wrapper) with great defaults
