@@ -8,9 +8,6 @@ Display output from `xo` as a list of style errors, ordered by count.
 
 _This package is inspired from [standard-summary](https://github.com/zeke/standard-summary)._
 
-> [!TIP]\
-> This package may not be necessary. You can use `xo --reporter json` to generate JSON output and summarize it with your preferred tool.
-
 ## Install
 
 ```shell
@@ -51,6 +48,10 @@ xo | xo-summary --name-only
 2      react/jsx-sort-props
 1      padding-line-between-statements
 ```
+
+### Tips
+
+Use `xo --reporter json` when you need machine-readable output, custom summaries, or integration with another tool. Use `xo-summary` for a quick, human-readable summary in the terminal.
 
 ## Related
 
