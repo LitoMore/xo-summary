@@ -10,17 +10,17 @@ _This package is inspired from [standard-summary](https://github.com/zeke/standa
 
 ## Install
 
-```bash
-$ npm install -g xo xo-summary
+```shell
+npm install -g xo xo-summary
 ```
 
 ## Usage
 
 `cd` into your favorite javascript project, then pipe the output of xo into xo-summary:
 
-```
-$ cd my/project
-$ xo | xo-summary
+```shell
+cd my/project
+xo | xo-summary
 
 17     Missing semicolon.
 8      Expected indentation of 1 tab but found 2 spaces.
@@ -36,9 +36,9 @@ $ xo | xo-summary
 
 You can also use the `--name-only` option to display only the rule names:
 
-```
-$ cd my/project
-$ xo | xo-summary --name-only
+```shell
+cd my/project
+xo | xo-summary --name-only
 
 17     semi
 8      indent
@@ -51,8 +51,8 @@ $ xo | xo-summary --name-only
 
 ## Related
 
-- [XO](https://github.com/xojs/xo) - JavaScript happiness style linter
+- [XO](https://github.com/xojs/xo) - JavaScript/TypeScript linter (ESLint wrapper) with great defaults
 
 ## License
 
-MIT © [LitoMore](https://github.com/LitoMore)
+MIT

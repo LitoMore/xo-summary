@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 import process from 'node:process';
-import concat from 'concat-stream';
-import stripAnsi from 'strip-ansi';
+import {stripVTControlCharacters} from 'node:util';
 
 const errors = {};
 
@@ -13,23 +12,36 @@ if (process.stdin.isTTY) {
 
 const isNameOnlyMode = process.argv.includes('--name-only');
 
-process.stdin.pipe(concat(buffer => {
-	for (let line of buffer
-		.toString()
-		.split('\n')) {
-		line = stripAnsi(line);
-		if (!line || !/\s+\d+:\d+\s+/.test(line)) {
-			continue;
-		}
+process.stdin.setEncoding('utf8');
 
-		const error = line.split(/\s+\d+:\d+\s+/)[1].replace(isNameOnlyMode ? /^.+\s{2,}/ : /\s+\S+$/, '');
-		const count = errors[error] || 0;
-		errors[error] = count + 1;
+let input = '';
+for await (const chunk of process.stdin) {
+	input += chunk;
+}
+
+for (let line of input.split('\n')) {
+	line = stripVTControlCharacters(line);
+	const linePrefix = /^\s*\S\s+\d+:\d+\s+/v.exec(line);
+	if (!linePrefix) {
+		continue;
 	}
 
-	for (const error of Object.keys(errors)
-		.sort((a, b) => errors[b] - errors[a])) {
-		const count = errors[error];
-		console.log(String(count).padEnd(6, ' '), error);
+	const description = line.slice(linePrefix[0].length).trimEnd();
+	const ruleSeparatorIndex = description.lastIndexOf('  ');
+
+	let error = description;
+	if (ruleSeparatorIndex !== -1) {
+		error = isNameOnlyMode
+			? description.slice(ruleSeparatorIndex + 2).trimStart()
+			: description.slice(0, ruleSeparatorIndex).trimEnd();
 	}
-}));
+
+	const count = errors[error] || 0;
+	errors[error] = count + 1;
+}
+
+for (const error of Object.keys(errors)
+	.toSorted((a, b) => errors[b] - errors[a])) {
+	const count = errors[error];
+	console.log(String(count).padEnd(6, ' '), error);
+}
